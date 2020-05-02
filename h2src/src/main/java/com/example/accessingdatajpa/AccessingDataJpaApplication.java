@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 @Slf4j
 public class AccessingDataJpaApplication implements CommandLineRunner {
-	
+
 	@Autowired
 	private CustomerRepository repository;
 
