@@ -13,6 +13,7 @@ import org.springframework.context.ApplicationContext;
 public class IodApplication implements CommandLineRunner {
 
 	private static Logger LOG = LoggerFactory.getLogger(IodApplication.class);
+	@Autowired
 	private IMyService iodservice;
 	@Autowired
 	private ApplicationContext context;
