@@ -1,0 +1,6 @@
+Lombok
+Spring Data JPA
+H2 Database
+PostgreSQL Driver
+Spring Web
+Thymeleaf
