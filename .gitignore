@@ -25,3 +25,4 @@ hs_err_pid*
 **/graddle/**
 .graddle
 .idea
+**/build/**
