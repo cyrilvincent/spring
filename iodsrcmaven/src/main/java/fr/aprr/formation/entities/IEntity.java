@@ -1,4 +1,6 @@
 package fr.aprr.formation.entities;
 
-public class IEntity {
+public interface IEntity {
+
+    public int getId();
 }
