@@ -2,7 +2,7 @@ package fr.aprr.formation.entities;
 
 import org.springframework.stereotype.Component;
 
-@Component("book")
+@Component
 public class Book extends Media {
 
     private int nbPage = 0;

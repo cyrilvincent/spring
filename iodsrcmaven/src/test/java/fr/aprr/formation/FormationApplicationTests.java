@@ -2,6 +2,7 @@ package fr.aprr.formation;
 
 import fr.aprr.formation.entities.Book;
 import fr.aprr.formation.repositories.MockBookRepository;
+import fr.aprr.formation.services.IMainService;
 import fr.aprr.formation.services.MainService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -43,7 +44,7 @@ class FormationApplicationTests {
 	@Test
 	void serviceTest() {
 		MockBookRepository repo = new MockBookRepository();
-		MainService service = new MainService();
+		IMainService service = new MainService();
 		service.getCart().add(new Book(0,"Java",10));
 		service.getCart().add(new Book(0,"Java",10));
 		Assert.isTrue(21.099999999999998 == service.getTotalNetPrice(),"Cart");

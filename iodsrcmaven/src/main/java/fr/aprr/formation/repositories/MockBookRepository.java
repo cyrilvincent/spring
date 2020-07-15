@@ -2,11 +2,12 @@ package fr.aprr.formation.repositories;
 
 import fr.aprr.formation.entities.Book;
 import fr.aprr.formation.entities.IEntity;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Repository
 public class MockBookRepository implements IRepository<Book> {
 
     @Override
