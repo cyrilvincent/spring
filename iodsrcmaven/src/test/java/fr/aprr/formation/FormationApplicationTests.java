@@ -43,11 +43,9 @@ class FormationApplicationTests {
 	@Test
 	void serviceTest() {
 		MockBookRepository repo = new MockBookRepository();
-		MainService service = new MainService(repo);
+		MainService service = new MainService();
 		service.getCart().add(new Book(0,"Java",10));
 		service.getCart().add(new Book(0,"Java",10));
 		Assert.isTrue(21.099999999999998 == service.getTotalNetPrice(),"Cart");
-
 	}
-
 }
