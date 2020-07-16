@@ -1,6 +1,7 @@
 package fr.aprr.formation;
 
 import fr.aprr.formation.entities.Media;
+import fr.aprr.formation.repositories.JdbcTest;
 import fr.aprr.formation.services.IMainService;
 import fr.aprr.formation.services.MainService;
 import lombok.extern.slf4j.Slf4j;
@@ -30,16 +31,17 @@ public class FormationApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("Hello from Spring Boot");
+		log.info("Hello from Spring Boot");
 		log.info(service.toString());
-		System.out.println(service.getRepository());
-		System.out.println(service.getRepository().getById(0));
-		System.out.println(service.getRepository().getById(0).getTitle());
+		log.info(service.getRepository().toString());
+		log.info(service.getRepository().getById(0).toString());
+		log.info(service.getRepository().getById(0).getTitle());
 		Media m = context.getBean("book", Media.class);
 		m.setTitle("Java");
-		System.out.println(m.getTitle());
+		log.info(m.getTitle());
 		IMainService s1 = context.getBean("mainService",MainService.class);
-		System.out.println(s1);
+		log.info(s1.toString());
+		JdbcTest.test();
 
 	}
 }
