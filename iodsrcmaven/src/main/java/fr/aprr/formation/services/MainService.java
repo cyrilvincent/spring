@@ -34,6 +34,13 @@ public class MainService implements IMainService {
     }
 
     @Override
+    public void add(int id) {
+        // Rechercher dans le repository le media par son id
+        //this.cart.add(m);
+    }
+
+
+    @Override
     public double getTotalNetPrice() {
         //return cart.stream().map(b -> b.getNetPrice()).mapToDouble(b -> b).sum();
         double sum = 0;
@@ -46,10 +53,5 @@ public class MainService implements IMainService {
     @Override
     public List<Media> getCart() {
         return cart;
-    }
-
-    @Override
-    public boolean accessRepository() {
-        return this.repository != null;
     }
 }

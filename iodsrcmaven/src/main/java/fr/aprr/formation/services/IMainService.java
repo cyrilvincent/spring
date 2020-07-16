@@ -14,5 +14,6 @@ public interface IMainService {
 
     List<Media> getCart();
 
-    boolean accessRepository();
+    void add(int id);
+
 }

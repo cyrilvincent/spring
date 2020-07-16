@@ -1,6 +1,7 @@
 package fr.aprr.formation;
 
 import fr.aprr.formation.entities.Media;
+import fr.aprr.formation.repositories.H2Factory;
 import fr.aprr.formation.repositories.JdbcTest;
 import fr.aprr.formation.services.IMainService;
 import fr.aprr.formation.services.MainService;
@@ -31,6 +32,9 @@ public class FormationApplication implements CommandLineRunner {
 	@Autowired
 	private Environment env;
 
+	@Autowired
+	private H2Factory h2;
+
 	//private static Logger log = LoggerFactory.getLogger(FormationApplication.class);
 
 	@Override
@@ -47,6 +51,6 @@ public class FormationApplication implements CommandLineRunner {
 		IMainService s1 = context.getBean("mainService",MainService.class);
 		log.info(s1.toString());
 		JdbcTest.test();
-
+		h2.create();
 	}
 }
