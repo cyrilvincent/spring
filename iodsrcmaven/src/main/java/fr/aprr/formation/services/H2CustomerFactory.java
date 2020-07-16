@@ -1,19 +1,17 @@
 package fr.aprr.formation.services;
 
 import fr.aprr.formation.entities.Customer;
-import fr.aprr.formation.repositories.CustomerH2Repository;
+import fr.aprr.formation.repositories.CustomerJPARepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Slf4j
 @Service
 public class H2CustomerFactory {
 
     @Autowired
-    CustomerH2Repository repository;
+    CustomerJPARepository repository;
 
     public void create() {
         repository.save(new Customer("Jack", "Bauer"));

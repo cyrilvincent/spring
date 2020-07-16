@@ -49,6 +49,6 @@ public class FormationApplication implements CommandLineRunner {
 		IMainService s1 = context.getBean("mainService",MainService.class);
 		log.info(s1.toString());
 		JdbcTest.test();
-		h2.create();
+		//h2.create();
 	}
 }

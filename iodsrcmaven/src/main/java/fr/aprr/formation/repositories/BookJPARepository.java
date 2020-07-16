@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface BookH2Repository extends CrudRepository<Book, Integer> {
+public interface BookJPARepository extends CrudRepository<Book, Integer> {
 
     Book findById(int id);
 

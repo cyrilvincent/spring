@@ -1,9 +1,7 @@
 package fr.aprr.formation.services;
 
 import fr.aprr.formation.entities.Media;
-import fr.aprr.formation.repositories.BookH2Repository;
 import fr.aprr.formation.repositories.MockBookRepository;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;

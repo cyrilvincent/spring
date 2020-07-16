@@ -4,6 +4,7 @@ import lombok.*;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Component
@@ -15,6 +16,7 @@ import javax.persistence.Entity;
 @Entity
 public class Book extends Media {
 
+    @Column(name = "nbpage")
     private Integer nbPage = 0;
 
     public Book(int id, String title, double price) {

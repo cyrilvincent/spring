@@ -1,9 +1,7 @@
 package fr.aprr.formation.services;
 
-import fr.aprr.formation.entities.Book;
 import fr.aprr.formation.entities.Media;
-import fr.aprr.formation.repositories.BookH2Repository;
-import fr.aprr.formation.repositories.MockBookRepository;
+import fr.aprr.formation.repositories.BookJPARepository;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -17,12 +15,12 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @ToString
-public class H2Service {
+public class JPAService {
 
     private List<Media> cart = new ArrayList<>();
 
     @Autowired
-    private BookH2Repository repository;
+    private BookJPARepository repository;
 
     public void addToCart(int id) {
         Media b = repository.findById(id);

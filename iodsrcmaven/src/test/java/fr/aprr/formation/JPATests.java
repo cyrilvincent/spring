@@ -7,13 +7,14 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.sql.SQLException;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest
 @Slf4j
-class H2Tests {
+class JPATests {
 
 	@Autowired
 	private JPAService service;
@@ -21,14 +22,10 @@ class H2Tests {
 	@Autowired
 	private ApplicationContext context;
 
-	@Autowired
-	private H2BookFactory h2;
-
 	@Test
-	void h2Test() throws SQLException {
-		h2.create();
-		service.addToCart(6);
-		service.addToCart(7);
+	void pgTest() throws SQLException {
+		service.addToCart(1);
+		service.addToCart(2);
 		log.info(service.getCart().toString());
 		log.info("TotalNetPrice:"+service.getTotalNetPrice());
 		assertEquals(21.1,service.getTotalNetPrice(),0.01);

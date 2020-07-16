@@ -1,9 +1,7 @@
 package fr.aprr.formation.services;
 
 import fr.aprr.formation.entities.Book;
-import fr.aprr.formation.entities.Customer;
-import fr.aprr.formation.repositories.BookH2Repository;
-import fr.aprr.formation.repositories.CustomerH2Repository;
+import fr.aprr.formation.repositories.BookJPARepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class H2BookFactory {
 
     @Autowired
-    BookH2Repository repository;
+    BookJPARepository repository;
 
     public void create() {
         repository.save(new Book("Java", 10, 100));
