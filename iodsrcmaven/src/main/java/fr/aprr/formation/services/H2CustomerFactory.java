@@ -1,6 +1,7 @@
-package fr.aprr.formation.repositories;
+package fr.aprr.formation.services;
 
 import fr.aprr.formation.entities.Customer;
+import fr.aprr.formation.repositories.CustomerH2Repository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +10,7 @@ import java.util.Optional;
 
 @Slf4j
 @Service
-public class H2Factory {
+public class H2CustomerFactory {
 
     @Autowired
     CustomerH2Repository repository;

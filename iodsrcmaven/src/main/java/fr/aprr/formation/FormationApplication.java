@@ -1,13 +1,11 @@
 package fr.aprr.formation;
 
 import fr.aprr.formation.entities.Media;
-import fr.aprr.formation.repositories.H2Factory;
+import fr.aprr.formation.services.H2CustomerFactory;
 import fr.aprr.formation.repositories.JdbcTest;
 import fr.aprr.formation.services.IMainService;
 import fr.aprr.formation.services.MainService;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -33,7 +31,7 @@ public class FormationApplication implements CommandLineRunner {
 	private Environment env;
 
 	@Autowired
-	private H2Factory h2;
+	private H2CustomerFactory h2;
 
 	//private static Logger log = LoggerFactory.getLogger(FormationApplication.class);
 

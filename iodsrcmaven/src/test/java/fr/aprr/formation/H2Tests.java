@@ -1,9 +1,12 @@
 package fr.aprr.formation;
 
 import fr.aprr.formation.entities.Book;
+import fr.aprr.formation.repositories.BookH2Repository;
 import fr.aprr.formation.repositories.BookSpringJdbcRepository;
 import fr.aprr.formation.repositories.CustomerSpringJdbcRepository;
+import fr.aprr.formation.services.H2BookFactory;
 import fr.aprr.formation.services.IMainService;
+import fr.aprr.formation.services.MainService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,21 +22,16 @@ import java.util.List;
 class H2Tests {
 
 	@Autowired
-	private IMainService service;
+	private MainService service;
 
 	@Autowired
 	private ApplicationContext context;
 
 	@Autowired
-	private CustomerSpringJdbcRepository customerRepository;
-	@Autowired
-	private BookSpringJdbcRepository bookRepository;
+	private H2BookFactory h2;
 
 	@Test
-	void cartTest() throws SQLException {
-		// Ajouter des book depuis la base dans le panier et tester
+	void h2Test() throws SQLException {
+		h2.create();
 	}
-
-
-
 }
