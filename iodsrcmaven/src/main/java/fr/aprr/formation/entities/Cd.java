@@ -1,25 +1,21 @@
 package fr.aprr.formation.entities;
-
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Component;
 
 @Component
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class Book extends Media {
+public class Cd extends Media {
 
-    private int nbPage = 0;
+    private int nbTrack;
 
-    public Book(int id, String title, double price) {
-        super(id, title, price);
-    }
 
     @Override
     public double getNetPrice() {
-        return this.getPrice() * 1.055;
+        return this.getPrice() * 1.2;
     }
-
 }

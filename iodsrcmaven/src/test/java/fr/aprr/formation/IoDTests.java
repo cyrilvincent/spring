@@ -1,5 +1,6 @@
 package fr.aprr.formation;
 
+import fr.aprr.formation.entities.Cd;
 import fr.aprr.formation.entities.Media;
 import fr.aprr.formation.services.IMainService;
 import fr.aprr.formation.services.MainService;
@@ -36,5 +37,6 @@ class IoDTests {
 		Assert.notNull(m, "NotNull");
 		IMainService s1 = context.getBean("mainService", MainService.class);
 		System.out.println(s1);
+		Cd cd = new Cd();
 	}
 }

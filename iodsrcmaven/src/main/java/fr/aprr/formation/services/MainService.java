@@ -2,6 +2,10 @@ package fr.aprr.formation.services;
 
 import fr.aprr.formation.entities.Media;
 import fr.aprr.formation.repositories.MockBookRepository;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Data
+@NoArgsConstructor
+@ToString
 public class MainService implements IMainService {
 
     private List<Media> cart = new ArrayList<>();
