@@ -1,6 +1,7 @@
 package fr.aprr.formation.entities;
 
 import lombok.*;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Component;
 @EqualsAndHashCode
 public class Book extends Media {
 
-    private int nbPage = 0;
+    private Integer nbPage = 0;
 
     public Book(int id, String title, double price) {
         super(id, title, price);
