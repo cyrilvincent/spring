@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.util.Assert;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -31,6 +32,8 @@ class IoDTests {
 	void serviceTest() {
 		Assert.notNull(service,"Not null");
 		Assert.notNull(service.getRepository(), "Not null");
+		assertNotNull(service);
+
 	}
 
 	@Test

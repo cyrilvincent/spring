@@ -36,9 +36,15 @@ public class H2BookFactory {
         log.info("");
 
         // fetch customers by last name
-        log.info("Book found with findByTitle('Java'):");
+        log.info("Book found with findByTitleContainsIgnoreCase('java'):");
         log.info("--------------------------------------------");
-        repository.findByTitle("Java").forEach(b -> {
+        repository.findByTitleContainsIgnoreCase("java").forEach(b -> {
+            log.info(b.toString());
+        });
+
+        log.info("Book found with findByPriceLessThan(15):");
+        log.info("--------------------------------------------");
+        repository.findByPriceLessThan(15).forEach(b -> {
             log.info(b.toString());
         });
 

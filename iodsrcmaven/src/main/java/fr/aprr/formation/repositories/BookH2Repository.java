@@ -10,6 +10,8 @@ public interface BookH2Repository extends CrudRepository<Book, Integer> {
 
     Book findById(int id);
 
-    List<Book> findByTitle(String title);
+    List<Book> findByTitleContainsIgnoreCase(String title);
+
+    List<Book> findByPriceLessThan(double price);
 
 }

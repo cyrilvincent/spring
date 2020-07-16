@@ -9,6 +9,7 @@ import fr.aprr.formation.services.MainService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.Assert;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -21,7 +22,9 @@ class FormationApplicationTests {
 
 	@Test
 	void firstTest() {
+
 		Assert.isTrue(1+1==2, "1+1==2");
+		assertEquals(1+1,2);
 	}
 
 	@Test
@@ -51,7 +54,7 @@ class FormationApplicationTests {
 		IMainService service = new MainService();
 		service.getCart().add(new Book(0,"Java",10));
 		service.getCart().add(new Book(0,"Java",10));
-		Assert.isTrue(21.099999999999998 == service.getTotalNetPrice(),"Cart");
+		assertEquals(21.1, service.getTotalNetPrice(),0.01);
 	}
 
 
