@@ -16,7 +16,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @SpringBootTest
-class IoDTests {
+class JdbcTests {
 
 	@Autowired
 	private IMainService service;
@@ -28,33 +28,13 @@ class IoDTests {
 	private CustomerJdbcRepository repository;
 
 	@Test
-	void serviceTest() {
-		Assert.notNull(service,"Not null");
-		Assert.notNull(service.getRepository(), "Not null");
+	void jdbcTest() {
+		/*
+		Créer la table book(id(serial),title(varying char),price(float),nbpage(int nullable))
+		Créer BookJdbcRepository
+		Créer le test
+		 */
 	}
 
-	@Test
-	void repoTest() {
-		Media m = service.getRepository().getById(0);
-		Assert.isTrue(m.getTitle().equals("Java"), "repoTest");
-	}
 
-	@Test
-	void beanTest() {
-		Media m = context.getBean("book", Media.class);
-		Assert.notNull(m, "NotNull");
-		IMainService s1 = context.getBean("mainService", MainService.class);
-		System.out.println(s1);
-		Cd cd = new Cd();
-	}
-
-	@Test
-	void customerJdbcTest() throws ClassNotFoundException, SQLException {
-		List<Customer> res = repository.getAll();
-		Assert.isTrue(res.size()>0, ">0");
-		Customer c = res.get(0);
-		System.out.println(c.getLname());
-		Assert.isTrue(c.getLname().equals("Palmer"), "Palmer");
-
-	}
 }
