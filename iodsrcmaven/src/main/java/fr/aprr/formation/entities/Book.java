@@ -4,8 +4,8 @@ import lombok.*;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.util.List;
 
 @Component
 @Data
@@ -18,6 +18,16 @@ public class Book extends Media {
 
     @Column(name = "nbpage")
     private Integer nbPage = 0;
+
+    @ManyToOne
+    private Publisher publisher;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name="book_author",
+               joinColumns = @JoinColumn(name = "author_id"),
+               inverseJoinColumns = @JoinColumn(name = "book_id")
+    )
+    private List<Author> authors;
 
     public Book(int id, String title, double price) {
         super(id, title, price);
