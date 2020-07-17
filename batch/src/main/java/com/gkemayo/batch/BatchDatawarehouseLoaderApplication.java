@@ -92,7 +92,7 @@ public class BatchDatawarehouseLoaderApplication {
 	}
 
 	@Bean
-	@Scheduled(cron = "*/2 * * * * *")
+	@Scheduled(cron = "*/1 * * * * *")
 	public Job jobStep() throws Exception {
 		return jobBuilderFactory.get("jobDatawarehouseLoader").repository(jobRepositoryW()).incrementer(new RunIdIncrementer()).listener(batchJobListener())
 				.flow(batchStep()).end().build();
